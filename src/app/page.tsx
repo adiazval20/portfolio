@@ -12,7 +12,7 @@ export default function Home() {
       <h2 className="mt-20 text-6xl font-semibold text-center">My Expertise</h2>
       <div className="xl:mx-70 lg:mx-40 md:mx-20 md:flex my-10">
         {generalSkills.map(generalSkill => (
-          <div className="big-skills-item">
+          <div key={generalSkill.id} className="big-skills-item">
             <span dangerouslySetInnerHTML={{ __html: generalSkill.icon }}></span>
             <h1>{generalSkill.title}</h1>
             <p>{generalSkill.description}</p>
@@ -20,7 +20,7 @@ export default function Home() {
             <h2>Core expertise</h2>
             <p>
               {generalSkill.skills.map((skill, i) => (
-                <span>{skill + (i == generalSkill.skills.length - 1 ? "" : ", ")}</span>
+                <span key={i}>{skill + (i == generalSkill.skills.length - 1 ? "" : ", ")}</span>
               ))}
             </p>
           </div>
@@ -28,7 +28,7 @@ export default function Home() {
       </div>
       <div className="xl:mx-70">
         {experiences.map(item => (
-          <Disclosure as="div" className="experience-item">
+          <Disclosure key={item.id} as="div" className="experience-item">
             <DisclosureButton className="experience-item-title">
               <div className="item-title-left">
                 <div>{item.company}</div>
@@ -41,8 +41,8 @@ export default function Home() {
             </DisclosureButton>
             <DisclosurePanel className="experience-body">
               <ul>
-                {item.bulletPoints.map(bp => (
-                  <li>{bp}</li>
+                {item.bulletPoints.map((bp, i) => (
+                  <li key={i}>{bp}</li>
                 ))}
               </ul>
             </DisclosurePanel>
@@ -52,7 +52,7 @@ export default function Home() {
       <h2 className="mt-15 mb-8 text-6xl font-semibold text-center">Personal Projects</h2>
       <div className="md:mx-30 md:flex">
         {projects.map(project => (
-          <div className="project-item">
+          <div key={project.id} className="project-item">
             <img src={project.image} />
             <div className="project-body">
               <h1>{project.title}</h1>
