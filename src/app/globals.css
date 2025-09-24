@@ -29,8 +29,32 @@ body {
   .big-skills-item {
     @apply md:w-full lg:w-1/3 p-5 flex flex-col items-center border border-white;
 
-    svg {
-      @apply w-15 h-15 text-gray-800 dark:text-white;
+    span {
+      svg {
+        @apply w-15 h-15 text-gray-800 dark:text-white transition duration-400;
+      }
+
+      &.yellow {
+        svg {}
+      }
+    }
+
+    &:hover {
+      span.yellow {
+        svg {
+          @apply text-yellow-200;
+        }
+      }
+      span.green {
+        svg {
+          @apply text-teal-500;
+        }
+      }
+      span.blue {
+        svg {
+          @apply text-sky-400;
+        }
+      }
     }
 
     h1 {
@@ -50,6 +74,7 @@ body {
     @apply mb-3;
 
     .experience-item-title {
+      cursor: pointer;
       @apply sm:flex w-full bg-gray-800 px-5 py-2 rounded-xs;
 
       .item-title-left {
@@ -62,7 +87,7 @@ body {
     }
 
     .experience-body {
-      @apply px-2 py-1 bg-gray-400;
+      @apply px-2 py-1 bg-gray-400 transition duration-200 ease-out data-closed:-translate-y-6 data-closed:opacity-0;
 
       ul {
         @apply m-2 text-black font-mono text-sm;
@@ -76,11 +101,14 @@ body {
 
   .project-item {
     @apply bg-gray-900 md:w-full lg:w-1/3 mx-3 flex flex-col items-center border border-white;
+
     .project-body {
       @apply px-5 py-2;
+
       h1 {
         @apply text-lg font-semibold;
       }
+
       p {
         @apply text-sm font-mono;
       }

@@ -11,9 +11,9 @@ export default function Home() {
       <p className="text-center text-gray-400">Experienced Software Engineer with over 12 years in web development, specializing in full-stack solutions</p>
       <h2 className="mt-20 text-6xl font-semibold text-center">My Expertise</h2>
       <div className="xl:mx-70 lg:mx-40 md:mx-20 md:flex my-10">
-        {generalSkills.map(generalSkill => (
+        {generalSkills.map(generalSkill => 
           <div key={generalSkill.id} className="big-skills-item">
-            <span dangerouslySetInnerHTML={{ __html: generalSkill.icon }}></span>
+            <span className={generalSkill.iconClass} dangerouslySetInnerHTML={{ __html: generalSkill.icon }}></span>
             <h1>{generalSkill.title}</h1>
             <p>{generalSkill.description}</p>
             <hr />
@@ -24,7 +24,7 @@ export default function Home() {
               ))}
             </p>
           </div>
-        ))}
+        )}
       </div>
       <div className="xl:mx-70">
         {experiences.map(item => (
@@ -39,7 +39,7 @@ export default function Home() {
                 <div>{item.dateFrom} - {item.dateTo}</div>
               </div>
             </DisclosureButton>
-            <DisclosurePanel className="experience-body">
+            <DisclosurePanel transition className="experience-body">
               <ul>
                 {item.bulletPoints.map((bp, i) => (
                   <li key={i}>{bp}</li>
