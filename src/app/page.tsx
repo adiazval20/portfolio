@@ -18,11 +18,11 @@ export default function Home() {
             <p>{generalSkill.description}</p>
             <hr />
             <h2>Core expertise</h2>
-            <p>
+            <div className="skills">
               {generalSkill.skills.map((skill, i) => (
-                <span key={i}>{skill + (i == generalSkill.skills.length - 1 ? "" : ", ")}</span>
+                <span className="skill" key={i}>{skill}</span>
               ))}
-            </p>
+            </div>
           </div>
         )}
       </div>

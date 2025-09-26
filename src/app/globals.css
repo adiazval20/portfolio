@@ -68,6 +68,16 @@ body {
     h2 {
       @apply text-xl;
     }
+
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+
+      .skill {
+        @apply bg-sky-800 rounded-lg mx-1 my-1 px-2 py-1 text-xs font-semibold;
+        text-wrap: nowrap;
+      }
+    }
   }
 
   .experience-item {
