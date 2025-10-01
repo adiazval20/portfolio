@@ -65,8 +65,14 @@ body {
       @apply text-sm;
     }
 
+    hr {
+      width: 100%;
+      background-color: #ededed;
+      @apply mt-4 mb-2;
+    }
+
     h2 {
-      @apply text-xl;
+      @apply text-lg font-mono;
     }
 
     .skills {

@@ -9,15 +9,15 @@ export default function Home() {
       <h1 className="mt-20 text-7xl font-semibold text-center">Andy Díaz Valdiviezo</h1>
       <h2 className="text-2xl text-center">Software Engineer II</h2>
       <p className="text-center text-gray-400">Experienced Software Engineer with over 12 years in web development, specializing in full-stack solutions</p>
-      <h2 className="mt-20 text-6xl font-semibold text-center">My Expertise</h2>
+      <h2 className="mt-15 text-6xl font-semibold text-center">My Expertise</h2>
       <div className="xl:mx-70 lg:mx-40 md:mx-20 md:flex my-10">
         {generalSkills.map(generalSkill => 
           <div key={generalSkill.id} className="big-skills-item">
             <span className={generalSkill.iconClass} dangerouslySetInnerHTML={{ __html: generalSkill.icon }}></span>
             <h1>{generalSkill.title}</h1>
-            <p>{generalSkill.description}</p>
+            <p className="text-center">{generalSkill.description}</p>
             <hr />
-            <h2>Core expertise</h2>
+            <h2>Core Skills</h2>
             <div className="skills">
               {generalSkill.skills.map((skill, i) => (
                 <span className="skill" key={i}>{skill}</span>
