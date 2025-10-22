@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@import "@chatscope/chat-ui-kit-styles/dist/default/styles.min.css";
 
 :root {
   --background: #171717;
@@ -45,11 +46,13 @@ body {
           @apply text-yellow-200;
         }
       }
+
       span.green {
         svg {
           @apply text-teal-500;
         }
       }
+
       span.blue {
         svg {
           @apply text-sky-400;
@@ -127,6 +130,23 @@ body {
 
       p {
         @apply text-sm font-mono;
+      }
+    }
+  }
+}
+
+.chat-ui {
+  .cs-conversation-header__content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    .cs-message-list {
+      @apply text-sm;
+
+      .cs-message__html-content {
+        @apply font-mono;
       }
     }
   }

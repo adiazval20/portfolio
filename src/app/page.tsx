@@ -2,6 +2,7 @@ import { Disclosure, DisclosureButton, DisclosurePanel } from "@headlessui/react
 import { experiences } from "./data/experience";
 import { generalSkills } from "./data/skills";
 import { projects } from "./data/projects"
+import ChatClient from "@/components/ChatClient";
 
 export default function Home() {
   return (
@@ -11,7 +12,7 @@ export default function Home() {
       <p className="text-center text-gray-400">Experienced Software Engineer with over 12 years in web development, specializing in full-stack solutions</p>
       <h2 className="mt-15 text-6xl font-semibold text-center">My Expertise</h2>
       <div className="xl:mx-70 lg:mx-40 md:mx-20 md:flex my-10">
-        {generalSkills.map(generalSkill => 
+        {generalSkills.map(generalSkill =>
           <div key={generalSkill.id} className="big-skills-item">
             <span className={generalSkill.iconClass} dangerouslySetInnerHTML={{ __html: generalSkill.icon }}></span>
             <h1>{generalSkill.title}</h1>
@@ -59,7 +60,11 @@ export default function Home() {
               <p>{project.description}</p>
             </div>
           </div>
-        ))} 
+        ))}
+      </div>
+
+      <div style={{ position: "relative", height: "500px" }}>
+        <ChatClient />
       </div>
     </div>
   );
