@@ -2,9 +2,10 @@ import { Disclosure, DisclosureButton, DisclosurePanel } from "@headlessui/react
 import { experiences } from "./data/experience";
 import { generalSkills } from "./data/skills";
 import { projects } from "./data/projects"
-import ChatClient from "@/components/ChatClient";
+import ChatButton from "@/components/ChatButton";
 
 export default function Home() {
+
   return (
     <div>
       <h1 className="mt-20 text-7xl font-semibold text-center">Andy Díaz Valdiviezo</h1>
@@ -64,7 +65,8 @@ export default function Home() {
       </div>
 
       <div style={{ position: "relative", height: "500px" }}>
-        <ChatClient />
+        
+        <ChatButton />
       </div>
     </div>
   );
