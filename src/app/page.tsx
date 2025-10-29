@@ -3,9 +3,9 @@ import { experiences } from "./data/experience";
 import { generalSkills } from "./data/skills";
 import { projects } from "./data/projects"
 import ChatButton from "@/components/ChatButton";
+import ExperienceClient from "@/components/ExperienceClient";
 
 export default function Home() {
-
   return (
     <div>
       <h1 className="mt-20 text-7xl font-semibold text-center">Andy Díaz Valdiviezo</h1>
@@ -28,28 +28,9 @@ export default function Home() {
           </div>
         )}
       </div>
+      <h3 className="mt-10 mb-5 text-4xl font-semibold text-center">More than 10 years of experience</h3>
       <div className="xl:mx-70">
-        {experiences.map(item => (
-          <Disclosure key={item.id} as="div" className="experience-item">
-            <DisclosureButton className="experience-item-title">
-              <div className="item-title-left">
-                <div>{item.company}</div>
-                <div>{item.title}</div>
-              </div>
-              <div className="item-title-right">
-                <div>{item.location}</div>
-                <div>{item.dateFrom} - {item.dateTo}</div>
-              </div>
-            </DisclosureButton>
-            <DisclosurePanel transition className="experience-body">
-              <ul>
-                {item.bulletPoints.map((bp, i) => (
-                  <li key={i}>{bp}</li>
-                ))}
-              </ul>
-            </DisclosurePanel>
-          </Disclosure>
-        ))}
+        <ExperienceClient items={experiences} />
       </div>
       <h2 className="mt-15 mb-8 text-6xl font-semibold text-center">Personal Projects</h2>
       <div className="md:mx-30 md:flex">
@@ -63,9 +44,17 @@ export default function Home() {
           </div>
         ))}
       </div>
+      <h3 className="mt-10 mb-5 text-4xl font-semibold text-center">Get in Touch</h3>
+      <p className="text-center text-gray-400">
+        Feel free to contact me if you’d like to discuss further.
+        <br />
+        <a href="mailto:andy.diaz.vald@gmail.com">
+          <button className="text-sm font-mono bg-blue-500 hover:bg-blue-700 text-white font-bold mt-5 py-2 px-3 rounded">Contact me!</button>
+        </a>
+      </p>
 
       <div style={{ position: "relative", height: "500px" }}>
-        
+
         <ChatButton />
       </div>
     </div>
