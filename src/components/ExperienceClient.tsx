@@ -25,8 +25,6 @@ export default function ExperienceClient({ items }: ExperienceProps) {
                     <div className="item-title-left">{item.title}</div>
                     <div className="item-title-right">{item.dateFrom} - {item.dateTo}</div>
                   </div>
-
-
                 </DisclosureButton>
                 {open &&
                   <DisclosurePanel transition className="experience-body">

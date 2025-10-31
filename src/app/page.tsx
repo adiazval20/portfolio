@@ -10,7 +10,12 @@ export default function Home() {
     <div>
       <h1 className="mt-20 text-7xl font-semibold text-center">Andy Díaz Valdiviezo</h1>
       <h2 className="text-2xl text-center">Software Engineer II</h2>
-      <p className="text-center text-gray-400">Experienced Software Engineer with over 12 years in web development, specializing in full-stack solutions</p>
+      <h2 className="mt-15 text-6xl font-semibold text-center">Who I am</h2>
+      <p className="max-w-4xl text-center mx-auto mt-4 text-gray-400 border  py-5 px-10 bg-gray-800">
+        Experienced Software Engineer with over 12 years in web development, specializing in full-stack solutions using .NET
+        (ASP.NET/.NET Core), Microsoft SQL Server, and Azure. Skilled in translating complex business needs into clear technical
+        and compliance requirements, as well as mentoring junior developers to deliver scalable solutions.
+      </p>
       <h2 className="mt-15 text-6xl font-semibold text-center">My Expertise</h2>
       <div className="xl:mx-70 lg:mx-40 md:mx-20 md:flex my-10">
         {generalSkills.map(generalSkill =>
