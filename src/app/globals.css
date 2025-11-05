@@ -20,6 +20,19 @@
   }
 }
 
+@keyframes gradient-shift {
+  0% {
+    background-position: 0% 0%;
+  }
+
+  100% {
+    background-position: 100% 0%;
+  }
+
+  /* Shifts the gradient from left to right */
+}
+
+
 body {
   background: var(--background);
   color: var(--foreground);
@@ -28,19 +41,50 @@ body {
 
 @layer components {
   .big-skills-item {
-    @apply md:w-full lg:w-1/3 p-5 flex flex-col items-center border border-white;
+    @apply md:w-full lg:w-1/3 p-5 flex flex-col items-center border border-white transition duration-300;
+
+    &:hover {
+      @apply text-gray-700;
+
+      span {
+        svg {
+          @apply text-gray-700;
+        }
+      }
+    }
+
+    &.yellow {
+      &:hover {
+        @apply bg-linear-to-b from-amber-100 to-amber-300;
+      }
+    }
+
+    &.green {
+      &:hover {
+        @apply bg-linear-to-b from-green-100 to-green-300;
+      }
+    }
+
+    &.blue {
+      &:hover {
+        @apply bg-linear-to-b from-sky-100 to-sky-300;
+      }
+    }
+
+    &.red {
+      &:hover {
+        @apply bg-linear-to-b from-red-100 to-red-300;
+      }
+    }
 
     span {
       svg {
-        @apply w-15 h-15 text-gray-800 dark:text-white transition duration-400;
-      }
-
-      &.yellow {
-        svg {}
+        @apply w-15 h-15 text-gray-800 text-white;
       }
     }
 
     &:hover {
+
       span.yellow {
         svg {
           @apply text-yellow-200;
@@ -65,7 +109,7 @@ body {
     }
 
     p {
-      @apply text-sm;
+      @apply text-xs font-mono;
     }
 
     hr {
@@ -83,7 +127,7 @@ body {
       flex-wrap: wrap;
 
       .skill {
-        @apply bg-sky-800 rounded-lg mx-1 my-1 px-2 py-1 text-xs font-semibold;
+        @apply bg-gray-700 rounded-lg mx-1 my-1 px-2 py-1 text-xs font-semibold text-white;
         text-wrap: nowrap;
       }
     }
@@ -93,12 +137,12 @@ body {
     @apply mb-3;
 
     .item-title-left {
-        @apply flex-1 text-left;
-      }
+      @apply flex-1 text-left;
+    }
 
-      .item-title-right {
-        @apply w-1/3 text-right;
-      }
+    .item-title-right {
+      @apply w-1/3 text-right;
+    }
 
     .experience-item-title {
       cursor: pointer;
@@ -155,6 +199,35 @@ body {
 
       .cs-message__html-content {
         @apply font-mono;
+      }
+    }
+  }
+
+  .cs-conversation-header {
+    @apply p-0 bg-sky-100 border-none;
+  }
+
+  .cs-message-list {
+    @apply bg-sky-100
+  }
+
+  .cs-message__content {
+    @apply font-mono text-xs;
+  }
+
+  .cs-message-input {
+    @apply bg-sky-100 border-none;
+  }
+
+  .cs-message-input__content-editor-wrapper {
+    @apply rounded-md bg-white;
+
+    .cs-message-input__content-editor-container {
+      background-color: transparent;
+
+      .cs-message-input__content-editor {
+        background-color: transparent;
+        @apply font-mono text-sm;
       }
     }
   }

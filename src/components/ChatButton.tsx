@@ -14,7 +14,7 @@ export default function ChatButton() {
     <>
       <button
         onClick={toggle}
-        className="fixed bottom-6 right-6 z-50 bg-blue-600 hover:bg-blue-700 text-white rounded-full p-3 shadow-lg">
+        className="fixed bottom-6 right-6 z-50 bg-sky-800 hover:bg-sky-700 text-white rounded-full p-3">
         {open &&
           <>
             <svg className="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">

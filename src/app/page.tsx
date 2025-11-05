@@ -11,7 +11,7 @@ export default function Home() {
       <h1 className="mt-20 text-7xl font-semibold text-center">Andy Díaz Valdiviezo</h1>
       <h2 className="text-2xl text-center">Software Engineer II</h2>
       <h2 className="mt-15 text-6xl font-semibold text-center">Who I am</h2>
-      <p className="max-w-4xl text-center mx-auto mt-4 text-gray-400 border  py-5 px-10 bg-gray-800">
+      <p className="max-w-4xl text-center mx-auto mt-4 text-gray-400 py-5 px-10 bg-gray-800 rounded-lg font-mono text-sm">
         Experienced Software Engineer with over 12 years in web development, specializing in full-stack solutions using .NET
         (ASP.NET/.NET Core), Microsoft SQL Server, and Azure. Skilled in translating complex business needs into clear technical
         and compliance requirements, as well as mentoring junior developers to deliver scalable solutions.
@@ -19,8 +19,8 @@ export default function Home() {
       <h2 className="mt-15 text-6xl font-semibold text-center">My Expertise</h2>
       <div className="xl:mx-70 lg:mx-40 md:mx-20 md:flex my-10">
         {generalSkills.map(generalSkill =>
-          <div key={generalSkill.id} className="big-skills-item">
-            <span className={generalSkill.iconClass} dangerouslySetInnerHTML={{ __html: generalSkill.icon }}></span>
+          <div key={generalSkill.id} className={`${generalSkill.iconClass} big-skills-item`}>
+            <span dangerouslySetInnerHTML={{ __html: generalSkill.icon }}></span>
             <h1>{generalSkill.title}</h1>
             <p className="text-center">{generalSkill.description}</p>
             <hr />
@@ -33,7 +33,7 @@ export default function Home() {
           </div>
         )}
       </div>
-      <h3 className="mt-10 mb-5 text-4xl font-semibold text-center">More than 10 years of experience</h3>
+      <h3 className="mt-10 mb-5 text-4xl font-semibold text-center">More than 12 years of experience</h3>
       <div className="xl:mx-70">
         <ExperienceClient items={experiences} />
       </div>
@@ -54,12 +54,11 @@ export default function Home() {
         Feel free to contact me if you’d like to discuss further.
         <br />
         <a href="mailto:andy.diaz.vald@gmail.com">
-          <button className="text-sm font-mono bg-blue-500 hover:bg-blue-700 text-white font-bold mt-5 py-2 px-3 rounded">Contact me!</button>
+          <button className="text-sm font-mono bg-sky-800 hover:bg-sky-700 text-white font-bold mt-5 py-2 px-3 rounded">Contact me!</button>
         </a>
       </p>
 
       <div style={{ position: "relative", height: "500px" }}>
-
         <ChatButton />
       </div>
     </div>
