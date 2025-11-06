@@ -18,17 +18,18 @@ export default function ChatClient({ apiEndpoint, onClose }: ChatClientProps) {
 
     return (
         <div
-            className="chat-ui fixed bottom-20 right-6 w-80 h-120 rounded-lg bg-white overflow-hidden z-50">
+            className="chat-ui fixed bottom-20 right-6 w-80 h-120 rounded-3xl bg-white overflow-hidden z-50">
             <MainContainer>
                 <ChatContainer>
                     <ConversationHeader>
                         <ConversationHeader.Content>
                             <Avatar
-                                name="Susy"
-                                src="https://chatscope.io/storybook/react/assets/emily-xzL8sDL2.svg" />
-                            <div className="py-2 px-3 rounded-bl-lg bg-white">
-                                <button onClick={onClose} className="rounded-full p-2 border-2 border-gray-400">
-                                    <svg className="w-3 h-3 text-gray-800" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                name="Andy"
+                                className="border-2 border-gray-400 my-2 mx-5"
+                                src="avatar_circle.png" />
+                            <div className="py-2 pr-4 pl-4 rounded-bl-2xl bg-white">
+                                <button onClick={onClose} className="rounded-full p-1 border-2 border-gray-400 hover:bg-gray-100 hover:border-gray-500 cursor-pointer">
+                                    <svg className="w-5 h-5 text-gray-800" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
                                         <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18 17.94 6M18 18 6.06 6" />
                                     </svg>
                                 </button>
@@ -40,11 +41,11 @@ export default function ChatClient({ apiEndpoint, onClose }: ChatClientProps) {
                             <Message key={i} model={m} />
                         ))}
                         {typing &&
-                            <TypingIndicator content="Akane is typing" />
+                            <TypingIndicator content="Andy is typing" />
                         }
                     </MessageList>
                     <MessageInput
-                        placeholder="Type message here"
+                        placeholder="Ask about me!"
                         attachButton={false}
                         onSend={handleSend}
                     />

@@ -192,14 +192,10 @@ body {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
 
     .cs-message-list {
       @apply text-sm;
-
-      .cs-message__html-content {
-        @apply font-mono;
-      }
     }
   }
 
@@ -208,7 +204,13 @@ body {
   }
 
   .cs-message-list {
-    @apply bg-sky-100
+    @apply bg-sky-100 py-2;
+
+    .cs-message--outgoing {
+      .cs-message__content {
+        @apply bg-sky-700 text-white;
+      }
+    }
   }
 
   .cs-message__content {
@@ -216,11 +218,15 @@ body {
   }
 
   .cs-message-input {
-    @apply bg-sky-100 border-none;
+    @apply bg-sky-100 border-none pl-4 px-1 py-3;
+  }
+
+  .cs-chat-container .cs-message-input .cs-message-input__content-editor-wrapper:first-child{
+    @apply bg-white ml-0
   }
 
   .cs-message-input__content-editor-wrapper {
-    @apply rounded-md bg-white;
+    @apply rounded-full;
 
     .cs-message-input__content-editor-container {
       background-color: transparent;
