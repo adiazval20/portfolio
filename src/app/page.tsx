@@ -1,9 +1,9 @@
-import { Disclosure, DisclosureButton, DisclosurePanel } from "@headlessui/react";
 import { experiences } from "./data/experience";
 import { generalSkills } from "./data/skills";
 import { projects } from "./data/projects"
 import ChatButton from "@/components/ChatButton";
 import ExperienceClient from "@/components/ExperienceClient";
+import Image from 'next/image'
 
 export default function Home() {
   return (
@@ -51,7 +51,7 @@ export default function Home() {
         <div className="md:mx-30 md:flex">
           {projects.map(project => (
             <div key={project.id} className="project-item">
-              <img src={project.image} />
+              <Image src={project.image} alt="" />
               <div className="project-body">
                 <h1>{project.title}</h1>
                 <p>{project.description}</p>
