@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { Avatar, ChatContainer, ConversationHeader, MainContainer, Message, MessageInput, MessageList, MessageModel, TypingIndicator } from "@chatscope/chat-ui-kit-react";
+import { Avatar, ChatContainer, ConversationHeader, MainContainer, Message, MessageInput, MessageList, TypingIndicator } from "@chatscope/chat-ui-kit-react";
 import { HttpChatApi } from "@/lib/http-chat-api";
 import { useChat } from "@/lib/useChat";
 

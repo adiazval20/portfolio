@@ -3,7 +3,6 @@ import { generalSkills } from "./data/skills";
 import { projects } from "./data/projects"
 import ChatButton from "@/components/ChatButton";
 import ExperienceClient from "@/components/ExperienceClient";
-import Image from 'next/image'
 
 export default function Home() {
   return (
@@ -50,8 +49,8 @@ export default function Home() {
         <h2 className="mb-8 text-6xl font-semibold text-center">Personal Projects</h2>
         <div className="md:mx-30 md:flex">
           {projects.map(project => (
-            <div key={project.id} className="project-item">
-              <Image src={project.image} alt="" />
+            <div key={project.id} className="project-item relative">
+              <img src={project.image} alt="" />
               <div className="project-body">
                 <h1>{project.title}</h1>
                 <p>{project.description}</p>

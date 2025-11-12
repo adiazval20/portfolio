@@ -20,7 +20,7 @@ export default function ExperienceClient({ items }: ExperienceProps) {
             }
             return (
               <>
-                <DisclosureButton className="experience-item-title" onClick={() => { !open && setOpenIndex(index) }}>
+                <DisclosureButton className="experience-item-title" onClick={() => { if(!open) setOpenIndex(index) }}>
                   <div className="item-title">
                     <div className="item-title-left">{item.title}</div>
                     <div className="item-title-right">{item.dateFrom} - {item.dateTo}</div>

@@ -3,7 +3,7 @@ import { ChatApi } from "./chat-api";
 export class HttpChatApi implements ChatApi {
     constructor(private endpoint: string, private headers: HeadersInit = {}) { }
 
-    async send(message: string, ctx?: Record<string, unknown>): Promise<string> {
+    async send(message: string): Promise<string> {
         const res = await fetch(this.endpoint, {
             method: "POST",
             headers: { "Content-Type": "application/json", ...this.headers },

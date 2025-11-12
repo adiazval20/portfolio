@@ -28,9 +28,15 @@ export function useChat(api: ChatApi) {
                     position: 0
                 };
                 setMessages(prev => [...prev, botMsg]);
-            } catch (e: any) {
+            } catch (e: unknown) {
+                let errorMessage = "Sorry, I couldn't process that.";
+
+                if (e instanceof Error) {
+                    errorMessage += ` ${e.message}`;
+                }
+
                 const errMsg: MessageModel = {
-                    message: `Sorry, I couldn't process that. ${e?.message ?? ""}`,
+                    message: errorMessage,
                     direction: "incoming",
                     sender: "assistant",
                     position: 0
