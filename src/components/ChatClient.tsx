@@ -25,7 +25,7 @@ export default function ChatClient({ apiEndpoint, onClose }: ChatClientProps) {
                         <ConversationHeader.Content>
                             <Avatar
                                 name="Andy"
-                                className="border-2 border-gray-400 my-2 mx-5"
+                                className="border-2 border-gray-400 my-2 ml-4"
                                 src="avatar_circle.png" />
                             <div className="py-2 pr-4 pl-4 rounded-bl-2xl bg-white">
                                 <button onClick={onClose} className="rounded-full p-1 border-2 border-gray-400 hover:bg-gray-100 hover:border-gray-500 cursor-pointer">
