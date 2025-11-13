@@ -5,7 +5,8 @@ export type Experience = {
     location: string,
     dateFrom: string,
     dateTo: string,
-    bulletPoints: string[]
+    bulletPoints: string[],
+    tools?:  string[]
 }
 
 export const experiences: readonly Experience[] = [
@@ -20,6 +21,14 @@ export const experiences: readonly Experience[] = [
             "Led Azure DevOps implementation by designing and configuring automated CI/CD pipelines. This implementation reduced manual integration effort across all environments.",
             "Provided technical consulting for the STARSTrack product, leading front-end and backend system implementations, and cross-functional requirements definition.",
             "Led the software and infrastructure architecture for multiple teams, implementing best practices and design patterns that enhanced application reliability, maintainability, and scalability."
+        ],
+        tools: [
+            ".NET",
+            "Entity Framework ",
+            "JavaScript",
+            "SQL Server",
+            "Microsoft Azure",
+            "SSIS",
         ]
     },
     {
@@ -33,6 +42,13 @@ export const experiences: readonly Experience[] = [
             "Added new functionalities to the STARSTrack product by developing data visualization and reporting interfaces for healthcare analytics, enabling actionable insights and streamlined decision-making.",
             "Developed product demos and prototypes in collaboration with marketing team, effectively showcasing new product concepts to stakeholders and accelerating go to market decisions.",
             "Supported developer hiring through technical interviews and code reviews, ensuring high-quality hires and strengthening the development team."
+        ],
+        tools: [
+            ".NET",
+            "Entity Framework",
+            "JavaScript",
+            "SQL Server",
+            "Microsoft Azure",
         ]
     },
     {
@@ -46,6 +62,12 @@ export const experiences: readonly Experience[] = [
             "Implemented Git versioning with GitLab, overseeing the proposal, execution, team training, and change management to establish a streamlined development workflow.",
             "Developed an admissions CRM module, centralizing applicant data and streamlining communication with prospective students to boost enrollment efficiency.",
             "Redesign the university intranet modules related to the admission macro process, and create new reports that meet the organization's needs."
+        ],
+        tools: [
+            ".NET",
+            "JavaScript",
+            "SQL Server",
+            "SSRS",
         ]
     },
     {
@@ -58,6 +80,11 @@ export const experiences: readonly Experience[] = [
         bulletPoints: [
             "Developed and implemented a payroll management module for the Human Resources department, automating key processes to reduce manual data entry and enhance payroll accuracy.",
             "Developed and implemented a tailored benefits calculation module for various payroll types.",
+        ],
+        tools: [
+            ".NET",
+            "SQL Server",
+            "SSRS",
         ]
     },
     {
@@ -70,6 +97,11 @@ export const experiences: readonly Experience[] = [
         bulletPoints: [
             "Developed and implemented a new enrollment module for undergraduate students, optimizing the overall admissions workflow.",
             "Provided comprehensive support and maintenance for the Integrated University System, ensuring uninterrupted academic and administrative operations.",
+        ],
+        tools: [
+            "Java",
+            "JavaScript",
+            "Oracle DB",
         ]
     },
     {
@@ -82,6 +114,11 @@ export const experiences: readonly Experience[] = [
         bulletPoints: [
             "Developed and deployed a fuel control system for the Lambayeque Regional Government ensuring compliance with regional regulations.",
             "Mentored and trained interns, providing hands-on guidance and professional development support.",
+        ],
+        tools: [
+            "PHP",
+            "JavaScript",
+            "PostgreSQL",
         ]
     },
     {
@@ -94,6 +131,11 @@ export const experiences: readonly Experience[] = [
         bulletPoints: [
             "Developed and maintained the commercial pharmacy system for Mi Salud, optimizing inventory management to enhance operational efficiency.",
             "Designed and implemented multiple corporate websites, collaborating with marketing team to ensure consistent branding and an engaging digital presence.",
+        ],
+        tools: [
+            "PHP",
+            "JavaScript",
+            "MySQL",
         ]
     },
 ]

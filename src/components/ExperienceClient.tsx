@@ -37,6 +37,11 @@ export default function ExperienceClient({ items }: ExperienceProps) {
                         <li key={i}>{bp}</li>
                       ))}
                     </ul>
+                    <div className="tools">
+                      {item.tools?.map((tool, i) => (
+                        <span className="tool" key={i}>{tool}</span>
+                      ))}
+                    </div>
                   </DisclosurePanel>
                 }
               </>

@@ -39,15 +39,15 @@ export default function Home() {
           )}
         </div>
       </div>
-      <div className="jobs flex flex-col items-center bg-gray-800 py-10">
-        <h3 className="mb-5 text-4xl font-semibold text-center">More than 12 years of experience</h3>
-        <div className="w-3/4 xl:w-5xl">
+      <div className="jobs flex flex-col items-center bg-gray-900 py-15">
+        <h3 className="mb-8 text-6xl font-semibold text-center">Profesional experience</h3>
+        <div className="w-3/4 xl:w-3xl">
           <ExperienceClient items={experiences} />
         </div>
       </div>
       <div className="projects pt-15 pb-20">
         <h2 className="mb-8 text-6xl font-semibold text-center">Personal Projects</h2>
-        <div className="md:mx-30 md:flex">
+        <div className="flex mx-30 justify-center">
           {projects.map(project => (
             <div key={project.id} className="project-item relative">
               <img src={project.image} alt="" />
