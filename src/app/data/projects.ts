@@ -11,5 +11,5 @@ export const projects: Project[] = [
         image: "projects/project-1.png",
         title: "Portfolio",
         description: "Just a simple portfolio"
-    },
+    }
 ]
