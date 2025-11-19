@@ -7,7 +7,7 @@ import ExperienceClient from "@/components/ExperienceClient";
 export default function Home() {
   return (
     <div>
-      <div className="profile pt-20 md:pt-50 pb-15 md:pb-30 relative">
+      <div className="profile pt-20 md:pt-50 pb-15 md:pb-30 relative overflow-x-hidden">
         <div className="bg"></div>
         <div className="bg bg2"></div>
         <div className="bg bg3"></div>
