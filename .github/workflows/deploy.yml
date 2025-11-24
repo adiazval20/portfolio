@@ -1,0 +1,48 @@
+name: Deploy Portfolio Frontend to Elastic Beanstalk
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build
+        run: npm run build
+
+      - name: Generate deployment package
+        run: |
+          mkdir -p deploy
+          cp -r .next deploy/
+          cp -r node_modules deploy/
+          cp -r public deploy/
+          cp package.json deploy/
+          cp package-lock.json deploy/
+          cp server.js deploy/
+          cd deploy
+          zip -r ../deployment-package.zip *
+          cd ..
+
+      - name: Deploy to Elastic Beanstalk
+        uses: einaregilsson/beanstalk-deploy@v21
+        with:
+          aws_access_key: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws_secret_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          application_name: portfolio-frontend
+          environment_name: portfolio-frontend-env
+          version_label: frontend-${{ github.sha }}
+          region: us-east-2
+          deployment_package: deployment-package.zip
