@@ -25,16 +25,7 @@ jobs:
 
       - name: Generate deployment package
         run: |
-          mkdir -p deploy
-          cp -r .next deploy/
-          cp -r node_modules deploy/
-          cp -r public deploy/
-          cp package.json deploy/
-          cp package-lock.json deploy/
-          cp server.js deploy/
-          cd deploy
-          zip -r ../deployment-package.zip *
-          cd ..
+          zip -r deployment-package.zip .next node_modules public package.json package-lock.json server.js
 
       - name: Deploy to Elastic Beanstalk
         uses: einaregilsson/beanstalk-deploy@v21
