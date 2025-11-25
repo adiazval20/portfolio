@@ -22,6 +22,8 @@ jobs:
 
       - name: Build
         run: npm run build
+        env:
+          NEXT_PUBLIC_CHAT_API_URL: ${{ secrets.NEXT_PUBLIC_CHAT_API_URL }}
 
       - name: Generate deployment package
         run: |
