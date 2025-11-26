@@ -108,7 +108,7 @@ h1 {
         &:hover {
           @apply bg-indigo-100;
         }
-      } 
+      }
 
       span {
         svg {
@@ -222,7 +222,7 @@ h1 {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    align-items: flex-start;
+    align-items: center;
 
     .cs-message-list {
       @apply text-sm;
@@ -231,6 +231,18 @@ h1 {
 
   .cs-conversation-header {
     @apply p-0 bg-sky-100 border-none;
+
+    .cs-typing-indicator {
+      @apply font-mono text-xs;
+
+      .cs-typing-indicator__dot {
+        @apply bg-gray-400;
+      }
+
+      .cs-typing-indicator__text {
+        @apply text-gray-500;
+      }
+    }
   }
 
   .cs-message-list {
@@ -248,7 +260,7 @@ h1 {
   }
 
   .cs-message-input {
-    @apply bg-sky-100 border-none pl-4 px-1 py-3;
+    @apply bg-sky-100 border-none pl-4 px-1 pt-0 pb-3;
   }
 
   .cs-main-container {
