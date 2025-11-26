@@ -29,7 +29,7 @@ export default function ChatClient({ apiEndpoint, onClose }: ChatClientProps) {
                                 src="avatar_circle.png" />
                             <div>
                                 {typing &&
-                                    <TypingIndicator content="Andy is typing" />
+                                    <TypingIndicator content="Andy's assistant is typing" />
                                 }
                             </div>
                             <div className="py-2 pr-4 pl-4 rounded-bl-2xl bg-white self-start">
